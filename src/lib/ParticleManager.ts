@@ -25,6 +25,7 @@ export default class ParticleManager {
 		const polygon = this.library.getParameter(p => p.polygon);
 
 		let particlesNumber = particles.number.value;
+
 		if (
 			polygon.enable &&
 			polygon.type === PolygonType.INLINE &&
@@ -32,9 +33,11 @@ export default class ParticleManager {
 		) {
 			particlesNumber = this.library.polygonMask.getVerticesNumber();
 		}
+
 		for (let i = 0; i < particlesNumber; i++) {
 			particles.array.push(new Particle(this.library));
 		}
+
 		if (particles.staticParticles) {
 			particles.staticParticles.forEach(pos => {
 				particles.array.push(new Particle(this.library, {
@@ -44,6 +47,18 @@ export default class ParticleManager {
 						y: pos.y
 					},
 				}, true));
+			})
+		}
+
+		if (particles.manualParticles) {
+			particles.manualParticles.forEach(pos => {
+				particles.array.push(new Particle(this.library, {
+					color: { value: '#CCC' },
+					position: {
+						x: pos.x,
+						y: pos.y
+					}
+				}, false));
 			})
 		}
 	}

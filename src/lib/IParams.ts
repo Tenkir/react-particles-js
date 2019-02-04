@@ -142,6 +142,7 @@ export interface IParticleMoveDefinition {
 
 export interface IParams {
 	particles: {
+		manualParticles?: Array<{x: number, y: number}>,
 		number: {
 			value: number;
 			density: {

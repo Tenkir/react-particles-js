@@ -1,5 +1,5 @@
 {
-  "name": "react-particles-js",
+  "name": "tenkir-react-particles-js",
   "version": "2.4.3",
   "description": "Reactified particles.js",
   "main": "lib/particles.js",
@@ -9,7 +9,7 @@
     "compile:production": "NODE_ENV=production webpack"
   },
   "repository": {
-    "url": "https://github.com/Wufe/react-particles-js",
+    "url": "https://github.com/tenkir/react-particles-js",
     "type": "git"
   },
   "author": "Simone <simone.bembi@gmail.com>",

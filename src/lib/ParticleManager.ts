@@ -24,20 +24,6 @@ export default class ParticleManager {
 		const particles = this.library.getParameter(p => p.particles);
 		const polygon = this.library.getParameter(p => p.polygon);
 
-		let particlesNumber = particles.number.value;
-
-		if (
-			polygon.enable &&
-			polygon.type === PolygonType.INLINE &&
-			polygon.inline.arrangement === PolygonInlineArrangementType.ONE_PER_POINT
-		) {
-			particlesNumber = this.library.polygonMask.getVerticesNumber();
-		}
-
-		for (let i = 0; i < particlesNumber; i++) {
-			particles.array.push(new Particle(this.library));
-		}
-
 		if (particles.staticParticles) {
 			particles.staticParticles.forEach(pos => {
 				particles.array.push(new Particle(this.library, {
